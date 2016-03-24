@@ -15,7 +15,7 @@ User.create(first_name: 'joe', last_name: 'Case', email: 'joe@joe.com', password
 user_amount.times do
   User.create(  first_name:      Faker::Name.first_name,
                 last_name:       Faker::Name.last_name,
-                email:           Faker::Internet.email(self.first_name),
+                email:           Faker::Internet.email,
                 password:        'pw',
                 description:     Faker::StarWars.quote
                 )
@@ -27,16 +27,17 @@ users = User.all
 
 # TAGS
 tag_amount.times do
-  Tag.create(title: Faker::Commerce.color)
+  Tag.create(name: Faker::Commerce.color)
 end
 
 
 # TASKS
 users.each do |user|
+
   members_per_user.times do
     Member.create(first_name:  Faker::Name.first_name,
                   last_name:   Faker::Name.last_name,
-                  email:       Faker::Internet.email(self.first_name),
+                  email:       Faker::Internet.email,
                   phone:       Faker::PhoneNumber.cell_phone,
                   user_id:     user.id
                   )
@@ -46,15 +47,15 @@ users.each do |user|
 
 
   categories.each do |category_name|
-    category = Category.create(title: category_name, user_id: user.id)
+    category = Category.create(name: category_name, user_id: user.id)
     task_amount.times do
        task = Task.create(category_id: category.id,
                           user_id:     user.id,
                           name:        Faker::Hipster.sentence(3),
                           status:      0,
                           priority:    rand(1..3),
-                          due_date:    Faker::Date.forward(100),
-                          notes:       Faker::Lorem.paragraph(3)),
+                          due:         Faker::Date.forward(100),
+                          notes:       Faker::Lorem.paragraph(3),
                           member_id:   team_member_ids.sample
                           )
 
@@ -63,7 +64,7 @@ users.each do |user|
        tags_per_task.times do
           TagTask.create(tag_id: tag_ids.delete_at(rand(tag_ids.length)),
                          task_id: task.id)
-      end
+       end
       end
   end
 end
