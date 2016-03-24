@@ -15,7 +15,7 @@
       </div>
       <div class="right">
         <%if current_user %>
-          <li><%= link_to "Logout", session_path, method: :delete %></li>
+          <li><%= link_to "Logout", logout_path, method: :delete %></li>
           <li><%= link_to "My Dashboard", user_path(current_user) %></li>
         <% else %>
           <li><%= link_to "Login", new_session_path %></li>
@@ -25,9 +25,9 @@
     </ul>
   </nav>
 </header>
-
-
-<%= yield %>
-
+<p id="notice"><%= flash[:notice] %></p>
+<main>
+  <%= yield %>
+</main>
 </body>
 </html>

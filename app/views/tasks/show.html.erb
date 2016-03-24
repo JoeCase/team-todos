@@ -1,2 +1,10 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<div class="card">
+  <h4><span><input type="checkbox"></span><%=  @task.name %><span class="right light"><%= @task.category.name %></span></h4>
+  <div class="task-details">
+    <p>Priority: <%= @task.print_priority %> | Due Date: <%= @task.due %></p>
+    <P><%= @task.notes %></P>
+  </div>
+</div>
+
+<%= link_to "Back", user_path, method: :get, class: 'fake-button' %>
+

@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-  skip_before_action :logged_in?, only [:new, :create]
+  skip_before_action :logged_in?, only: [:new, :create]
 
 
 
@@ -8,13 +8,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(email: params[:user][:email])
-    if @user && user.authenticate(params[:user][:password])
-      sessiom[:user_id] = @user.id
-      redirect_to "/"
+    user = User.find_by(email: params[:user][:email])
+    if user && user.authenticate(params[:user][:password])
+      session[:user_id] = user.id
+      redirect_to user_path(current_user)
     else
       flash[:alert] = "Please check your login information and try again"
-      redirect_to login_path
+      redirect_to new_session_path
+    end
   end
 
   def destroy

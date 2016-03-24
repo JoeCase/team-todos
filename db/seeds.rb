@@ -1,6 +1,6 @@
 user_amount       = 2
 category_amount   = 2
-task_amount       = 2
+task_amount       = 8
 tag_amount        = 10
 tags_per_task     = 3
 members_per_user  = 3

@@ -1,2 +1,32 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="side-nav">
+  <div class="inner_nav">
+    <h5>Team Members:</h5>
+    <ul>
+      <%= render @user.members %>
+    </ul>
+  </div>
+
+  <div class="inner-nav">
+    <h5>Categories:</h5>
+    <ul>
+    <% @user.categories.each do |cat| %>
+     <li> <%= link_to cat.name, category_path %></li>
+    <% end %>
+    </ul>
+  </div>
+
+</div>
+
+
+<h1><%= @user.first_name %>'s Task List <span class="right"><%= link_to "New Task", new_task_path, class: "fake-button"  %></span>  </h1>
+
+
+<div class="task-list">
+  <ul>
+    <%= render @user.tasks %>
+  </ul>
+</div>
+
+
+
+

@@ -1,2 +1,9 @@
-<h1>Members#show</h1>
-<p>Find me in app/views/members/show.html.erb</p>
+<div class="card">
+  <h3><%= @member.full_name %></h3>
+  <p><%= @member.email %></p>
+  <p><%= @member.phone %></p>
+</div>
+
+<div class="task-list">
+  <%= render @member.tasks %>
+</div>

@@ -13,3 +13,48 @@
  *= require_tree .
  *= require_self
  */
+
+.task-list {
+  background-color: #fff;
+  margin-top: 25px;
+}
+
+.task-list li, .task-card li {
+  border-bottom: 1px solid gray;
+  padding:  10px;
+}
+
+.task-list input, .task-card input {
+  margin-right: 10px;
+}
+
+.task-list p, .task-card p {
+  margin: 5px 0px 0px 22px;
+  font-size: .9rem;
+  color:  #424242;
+  max-width: 75%;
+}
+
+.card {
+  background-color: #fff;
+  margin: 0 auto;
+  padding:  10px;
+}
+
+.task-details {
+  background-color: #F5F5F5;
+}
+
+.side-nav {
+  position: absolute;
+  left: 0px;
+  width: 200px;
+}
+
+.inner-nav {
+  display: block;
+  width: 60px;
+  float: left;
+}
+
+

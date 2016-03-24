@@ -1,5 +1,4 @@
 /* drop-in.css */
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100);
 
 /* RESETS */
 
@@ -17,7 +16,7 @@ body {
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
-  margin-bottom: 0.5rem;
+  /*margin-bottom: 0.5rem;*/
 }
 
 
@@ -45,7 +44,6 @@ header nav input[type="submit"] {
 }
 
 main {
-  background-color: #F5F5F5;   /* light gray */
   color: #212121;              /* dark gray */
   padding: 20px;
 }
@@ -153,8 +151,7 @@ main ul { margin: 0 auto 1.5rem; }
 
 main ul li {
   list-style: none;
-  margin: 0.5rem 0 1rem;
-  font-size: 1.25rem;
+
 }
 
 /* Forms */
@@ -239,7 +236,7 @@ form label>span {
     margin-top: 10px;
     color: #888;
 }
-form input[type="text"], form input[type="email"], form textarea, form select {
+form input[type="text"], form input[type="email"], form input[type="password"], form textarea, form select {
     border: 1px solid #DADADA;
     color: #888;
     height: 30px;
@@ -273,7 +270,8 @@ form select {
 form textarea{
     height:100px;
 }
-form .button {
+form .button, form input[type="submit"], .fake-button {
+    font-size: 1rem;
     background: #E27575;
     border: none;
     padding: 10px 25px 10px 25px;
@@ -283,6 +281,20 @@ form .button {
     text-shadow: 1px 1px 1px #9E3F3F;
     cursor: pointer;
 }
-form .button:hover {
+form .button:hover, form input[type="submit"]:hover {
     background: #CF7A7A
+}
+
+/*Position Helpers*/
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.light {
+  opacity: 0.4;
 }

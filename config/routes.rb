@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  resources :sessions, only: [:new, :create, :destroy]
 
+  delete 'logout' => 'sessions#destroy'
+  resources :sessions, only: [:new, :create]
   resources :users
   resources :tasks
   resources :categories
