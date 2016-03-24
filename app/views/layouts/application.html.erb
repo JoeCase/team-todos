@@ -7,6 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+  <nav>
+    <ul>
+      <div class="left">
+        <li>  <%= link_to "Home", root_path %> </li>
+      </div>
+      <div class="right">
+        <%if current_user %>
+          <li><%= link_to "Logout", session_path, method: :delete %></li>
+          <li><%= link_to "My Dashboard", user_path(current_user) %></li>
+        <% else %>
+          <li><%= link_to "Login", new_session_path %></li>
+          <li><%= link_to "Signup", new_user_path %></li>
+        <% end %>
+      </div>
+    </ul>
+  </nav>
+</header>
+
 
 <%= yield %>
 

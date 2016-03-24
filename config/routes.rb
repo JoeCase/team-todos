@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
 
-  root 'users#index'
+  root 'welcome#index'
+
+  resources :sessions, only: [:new, :create, :destroy]
 
   resources :users
   resources :tasks
   resources :categories
   resources :members
   resources :tags
+
+  # get 'login' => 'sessions#new'
+  # post 'login' => 'sessoions#create'
+  # delete 'logout' => 'sessions#destroy'
+
 
 
 
