@@ -11,6 +11,7 @@ categories = ['Home', 'Office', 'Errands']
 
 # USERS
 User.create(first_name: 'joe', last_name: 'Case', email: 'joe@joe.com', password: 'pw', description: Faker::Hipster.paragraph)
+User.create(first_name: 'ian', last_name: 'Beach', email: 'pib@tekinosf.com', password: 'password', description: Faker::Hipster.paragraph)
 
 user_amount.times do
   User.create(  first_name:      Faker::Name.first_name,
