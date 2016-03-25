@@ -1,9 +1,14 @@
-<div class="card">
-  <h3><%= @member.full_name %></h3>
-  <p><%= @member.email %></p>
-  <p><%= @member.phone %></p>
+<div class="col-md-8">
+  <%= link_to "Edit Member", edit_member_path, class: "btn btn-primary" %>
+  <div>
+    <h3><%= @member.full_name %></h3>
+    <p><%= @member.email %></p>
+    <p><%= @member.phone %></p>
+  </div>
+
+  <div class="task-list">
+    <%= render @member.tasks %>
+  </div>
 </div>
 
-<div class="task-list">
-  <%= render @member.tasks %>
-</div>
+

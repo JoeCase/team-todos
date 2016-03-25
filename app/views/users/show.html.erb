@@ -1,12 +1,13 @@
-<div class="side-nav">
-  <div class="inner_nav">
+<div class="col-sm-3 col-md-2 sidebar">
+  <span><%= link_to "Edit My Info", edit_user_path, class: "btn btn-primary" %></span>
+  <div class="nav nav-sidebar">
     <h5>Team Members:</h5>
     <ul>
       <%= render @user.members %>
     </ul>
   </div>
 
-  <div class="inner-nav">
+  <div class="nav nav-sidebar">
     <h5>Categories:</h5>
     <ul>
     <% @user.categories.each do |cat| %>
@@ -14,19 +15,16 @@
     <% end %>
     </ul>
   </div>
-
 </div>
 
-
-<h1><%= @user.first_name %>'s Task List <span class="right"><%= link_to "New Task", new_task_path, class: "fake-button"  %></span>  </h1>
-
-
-<div class="task-list">
-  <ul>
-    <%= render @user.tasks %>
-  </ul>
+<div class="col-md-8">
+  <h1><%= @user.first_name %>'s Task List <span><%= link_to "New Task", new_task_path, class: "btn btn-primary" %></span><span><%= link_to "New Member", new_member_path, class: "btn btn-primary" %></span></h1>
+  <div>
+    <ul class="list-group list-unstyled">
+      <%= render @user.tasks %>
+    </ul>
+  </div>
 </div>
-
 
 
 

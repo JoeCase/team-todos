@@ -1,4 +1,16 @@
+<a href="<%= task_path %>" class="list-group-item">
+  <div class="checkbox pull-left">
+    <label>
+      <input type="checkbox" value="">
+    </label>
+  </div>
 
-<li>
-  <h4><span><input type="checkbox"></span>      <%= link_to task.name, task_path %>   <span class="right light"><%= task.category.name if task.category %></span></h4>
-</li>
+  <div class="pull-left form-control-inline">
+    <h4 class="list-group-item-heading"><%= task.name %></h4>
+    <p class="list-group-item-text"><%= task.due %></p>
+  </div>
+
+      <span class="label label-danger pull-right"><%= task.category.name %></span>
+
+  <div class="clearfix"></div>
+</a>

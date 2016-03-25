@@ -1,10 +1,19 @@
-<div class="card">
-  <h4><span><input type="checkbox"></span><%=  @task.name %><span class="right light"><%= @task.category.name %></span></h4>
-  <div class="task-details">
+<%= link_to "Back", user_path, method: :get, class: 'fake-button' %>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @task.name %></h3>
+      <div class="checkbox" style="display:inline">
+        <label>
+          <input type="checkbox" style="float:inherit;">
+        </label>
+      </div>
+
+  </div>
+
+  <div class="panel-body">
     <p>Priority: <%= @task.print_priority %> | Due Date: <%= @task.due %></p>
     <P><%= @task.notes %></P>
   </div>
 </div>
-
-<%= link_to "Back", user_path, method: :get, class: 'fake-button' %>
-

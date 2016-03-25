@@ -167,13 +167,13 @@ main input[type="password"] {
   padding: 0 0.5rem;
 }*/
 
-/*main textarea {
+main textarea {
   width: 100%;
   height: 5rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
 }
-*/
+
 main input[type="submit"] { width: 12rem; padding: .5rem; }
 
 /* Tables */
@@ -298,3 +298,4 @@ form .button:hover, form input[type="submit"]:hover {
 .light {
   opacity: 0.4;
 }
+*/*/
